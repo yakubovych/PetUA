@@ -1,0 +1,4 @@
+04/28/2020 12:42:22 [Information]  App is starting up
+04/28/2020 12:42:43 [Information]  HTTP "GET" "/swagger/index.html" responded 200 in 94.3972 ms
+04/28/2020 13:00:33 [Information]  App is starting up
+04/28/2020 13:00:50 [Information]  HTTP "GET" "/swagger/index.html" responded 200 in 118.0607 ms

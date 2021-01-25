@@ -1,0 +1,19 @@
+<div class="container marketing">
+    <div class="row">
+      <div class="col-lg-4 mb-3" *ngFor="let animal of animals">
+        <img src="data:image/jpeg;base64,{{animal.images[0].imageData}}" class="mx-auto d-block">
+        <img *ngIf="animal.isNew"
+        src="https://www.stickpng.com/assets/images/5a5a6d3714d8c4188e0b0890.png"        
+        class="mx-auto d-block label"
+        >
+        <h2>{{ animal.name}}</h2>
+        <p *ngIf="getAge(animal.dateOfBirth) !== 0">Age: {{ getAge(animal.dateOfBirth)}}</p>
+        <p *ngIf="getAge(animal.dateOfBirth) === 0">Months: {{getMonth(animal.dateOfBirth) }}</p>
+        <p>Weight: {{animal.weight}}</p>
+        <p >{{getCategory(animal.categoryId)}}</p>
+        <p *ngIf="animal.gender === 0">Male</p>
+        <p *ngIf="animal.gender === 1">Female</p>
+        <p><a class="btn btn-secondary" [routerLink]="['/animalItem', animal.id]" role="button">View details »</a></p>
+    </div><!-- /.col-lg-4 -->
+    </div>
+  </div>

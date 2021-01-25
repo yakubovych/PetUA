@@ -1,0 +1,27 @@
+td, th{
+    width: 20%;
+    text-align: left;
+    padding: 8px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color:#3e4444;
+    color: white;
+}  
+button{
+    margin: 1px;
+}
+.butt{
+    display: inline-block;
+}
+
+h2{
+    margin: 3px;
+    padding-bottom: 5px;
+}

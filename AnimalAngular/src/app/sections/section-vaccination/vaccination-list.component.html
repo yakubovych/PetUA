@@ -1,0 +1,24 @@
+<h1>Vaccinations</h1>
+<p *ngIf="!vaccinations"><em>Loading...</em></p>
+<p> <a [routerLink]="['/vaccinationAdd']">Create New</a></p>
+<table class="table" *ngIf="vaccinations">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vaccination of vaccinations">
+      <td>{{ vaccination.id }} </td>
+      <td>{{ vaccination.name }} </td>
+      <td>{{ vaccination.type }} </td>
+      <td>
+        <a [routerLink]="['/vaccination/edit/', vaccination.id]">Edit</a> |
+        <a [routerLink]="" (click)="delete(vaccination.id)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

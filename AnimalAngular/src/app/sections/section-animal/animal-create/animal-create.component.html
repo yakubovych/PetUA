@@ -1,0 +1,231 @@
+<form [formGroup]="createForm" (ngSubmit)="create()" class="col-lg-8">
+    <input type="file" id="imgUploading" (change)="onFileChange($event)" #imageInput>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" formControlName="name" [ngClass]="{ 'is-invalid': submitted && formContols.name.errors }"
+            class="form-control"/>
+        <div *ngIf="submitted && formContols.name.errors" class="invalid-feedback">
+            <div *ngIf="formContols.name.errors.required">Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Date of birth</label>
+        <input type="date" formControlName="dateOfBirth" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formContols.dateOfBirth.errors }" class="form-control" />
+        <div *ngIf="submitted && formContols.dateOfBirth.errors" class="invalid-feedback">
+            <div *ngIf="formContols.dateOfBirth.errors.required">Date of birth is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Weight</label>
+        <input type="number" formControlName="weight" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formContols.weight.errors }" class="form-control" />
+        <div *ngIf="submitted && formContols.weight.errors" class="invalid-feedback">
+            <div *ngIf="formContols.weight.errors.required">Weight is required</div>
+            <div *ngIf="formContols.weight.errors.min">Weight must be greater than 0</div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Withers height</label>
+        <input type="number" formControlName="withersHeight" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formContols.withersHeight.errors }" class="form-control" />
+        <div *ngIf="submitted && formContols.withersHeight.errors" class="invalid-feedback">
+            <div *ngIf="formContols.withersHeight.errors.required">Withers height is required</div>
+            <div *ngIf="formContols.withersHeight.errors.min">Withers height must be greater than 0</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Neck circumference</label>
+        <input type="number" formControlName="neckCircumference" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formContols.neckCircumference.errors }" class="form-control" />
+        <div *ngIf="submitted && formContols.neckCircumference.errors" class="invalid-feedback">
+            <div *ngIf="formContols.neckCircumference.errors.required">Neck circumference is required</div>
+            <div *ngIf="formContols.neckCircumference.errors.min">Neck circumference must be greater than 0</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Category</label>
+        <select type="number" formControlName="categoryId" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formContols.categoryId.errors }" class="form-control">
+            <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+            <div *ngIf="submitted && formContols.categoryId.errors" class="invalid-feedback">
+                <div *ngIf="formContols.categoryId.errors.required">Name is required</div>
+            </div>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Food</label>
+        <select type="number" formControlName="foodId" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && formContols.foodId.errors }" class="form-control">
+            <option *ngFor="let food of foods" [ngValue]="food.id">{{food.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <select type="number" formControlName="addressId" class="form-control">
+            <option *ngFor="let address of addresses" [ngValue]="address.id">{{address.name}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Chip number</label>
+        <input type="number" formControlName="chipNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>New</label><br />
+        <label>
+            <input type="radio" [value]="true" formControlName="isNew">
+            <span>Yes</span>
+        </label>
+        <label>
+            <input type="radio" [value]="false" formControlName="isNew">
+            <span>No</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Adopted</label><br />
+        <label>
+            <input type="radio" [value]="true" formControlName="isAdopted">
+            <span>Yes</span>
+        </label>
+        <label>
+            <input type="radio" [value]="false" formControlName="isAdopted">
+            <span>No</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Hidden</label><br />
+        <label>
+            <input type="radio" [value]="true" formControlName="isHidden">
+            <span>Yes</span>
+        </label>
+        <label>
+            <input type="radio" [value]="false" formControlName="isHidden">
+            <span>No</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Continuatiton of treatment</label><br />
+        <label>
+            <input type="radio" [value]="true" formControlName="continuatitonOfTreatment">
+            <span>Yes</span>
+        </label>
+        <label>
+            <input type="radio" [value]="false" formControlName="continuatitonOfTreatment">
+            <span>No</span>
+        </label>
+    </div>
+    
+    <div class="form-group">
+        <label>
+            <input type="radio" [value]="0" formControlName="gender">
+            <span>male</span>
+        </label>
+        <label>
+            <input type="radio" [value]="1" formControlName="gender">
+            <span>female</span>
+        </label>
+    </div>
+  
+    <div class="container">
+        <strong>Keeping</strong>
+        
+        <div class="row row-cols-1">
+            <label formArrayName="keepings" *ngFor="let keeping of createForm.get('keepings').controls; let i = index">
+                {{keepings[i].name}}
+                <div [formGroupName]="i">
+                    <input type="checkbox" formControlName="isChecked" />
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <div class="container">
+        <strong>Needs</strong>
+        <div class="row row-cols-1">
+            <label formArrayName="needs" *ngFor="let need of createForm.get('needs').controls; let i = index">
+                {{needs[i].name}}
+                <div [formGroupName]="i">
+                    <input type="checkbox" formControlName="isChecked" />
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="container">
+                <strong>Defects</strong>
+
+        <div class="row row-cols-1">
+            <label formArrayName="defects" *ngFor="let defect of createForm.get('defects').controls; let i = index">
+                {{defects[i].type}}
+                <div [formGroupName]="i">
+                    <input type="checkbox" formControlName="isChecked" />
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="container">
+
+       <strong> Vaccinations</strong>
+        <div class="row row-cols-1">
+            <label formArrayName="vaccinations"
+                *ngFor="let vac of createForm.get('vaccinations').controls; let i = index">
+                <input type="checkbox" (change)="onCheckVaccinationChange(vac.value.id, $event.target.checked)" />
+                {{vaccinations[i].name}}
+                <div *ngIf="vaccinationsChecked[vac.value.id]" class="row">
+                    <div [formGroupName]="i" class="row">
+                        <div class="col">
+                            <label type="text-center">Vaccination date
+                                <input type="date" formControlName="vaccinationDate" class="form-control" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="container">
+       <strong> Processing</strong>
+        <div class="row row-cols-1">
+            <label formArrayName="processings"
+                *ngFor="let processing of createForm.get('processings').controls; let i = index">
+                <input type="checkbox" (change)="onCheckProcessingChange(processing.value.id, $event.target.checked)" />
+                {{processings[i].type}}
+                <div *ngIf="processingsChecked[processing.value.id]" class="row">
+                    <div [formGroupName]="i" class="row">
+                        <div class="col">
+                            <label type="text-center">Processing date
+                                <input type="date" formControlName="processingDate" class="form-control" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="container">
+       <strong> Attitude</strong>
+        <div class="row row-cols-1">
+            <label formArrayName="attitudes"
+                *ngFor="let attitude of createForm.get('attitudes').controls; let i = index">
+                <input type="checkbox" (change)="onCheckAttitidesChange(attitude.value.id, $event.target.checked)" />
+                {{attitudes[i].name}}
+                <div *ngIf="attitudesChecked[attitude.value.id]">
+                    <div [formGroupName]="i">
+                        <div class="box">
+                            <div class="box-header">Rating</div>
+                            <div class="box-body"> <select type="number" formControlName="mark" autocomplete="off"
+                                    class="form-control">
+                                    <option *ngFor="let m of marks" [ngValue]="m">{{m}}</option>
+                                </select> </div>
+                        </div>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-success">Create</button>
+        <input type="button" value="cancel" (click)="cancel()" class="btn btn-warning" />
+    </div>
+</form>

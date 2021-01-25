@@ -1,0 +1,22 @@
+<h1>Defects</h1>
+<p *ngIf="!defects"><em>Loading...</em></p>
+<p> <a [routerLink]="['/defectAdd']">Create New</a></p>
+<table class="table" *ngIf="defects">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Type</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let defect of defects">
+      <td>{{ defect.id }} </td>
+      <td>{{ defect.type }} </td>
+      <td>
+        <a [routerLink]="['/defect/edit/', defect.id]">Edit</a> |
+        <a [routerLink]="" (click)="delete(defect.id)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

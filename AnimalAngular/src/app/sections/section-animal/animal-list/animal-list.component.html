@@ -1,0 +1,109 @@
+<div class="container marketing">
+  <div class="row">
+    <div class="col">
+      <div class="form-check">
+        <h6>Weight:</h6>
+      </div>
+    <div class="form-check">
+      <input class="form-check-input" name="weight" type="checkbox" id="weight_small" value="small" (change)="onToggle($event)">
+      <label class="form-check-label" for="weight_small">small</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" name="weight" type="checkbox" id="weight_medium" value="medium" (change)="onToggle($event)">
+      <label class="form-check-label" for="weight_medium">medium</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" name="weight" type="checkbox" id="weight_large" value="large" (change)="onToggle($event)">
+      <label class="form-check-label" for="weight_large">large</label>
+    </div>
+    </div>
+    <div class="col">
+      <div class="form-check">
+        <h6>Categories:</h6>
+      </div>
+    <div class="form-check">
+      <input class="form-check-input" name="category" type="checkbox" id="category_cats" value="cats" (change)="onToggle($event)">
+      <label class="form-check-label" for="category_cats">cats</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" name="category" type="checkbox" id="category_dogs" value="dogs" (change)="onToggle($event)">
+      <label class="form-check-label" for="category_dogs">dogs</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" name="category" type="checkbox" id="category_other" value="others" (change)="onToggle($event)">
+      <label class="form-check-label" for="category_others">others</label>
+    </div>
+  </div>
+  <div class="col">
+    <div class="form-check">
+      <h6>Age:</h6>
+    </div>
+  <div class="form-check">
+    <input class="form-check-input" name="dateOfBirth" type="checkbox" id="age_baby" value="baby" (change)="onToggle($event)">
+    <label class="form-check-label" for="age_baby">baby</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" name="dateOfBirth" type="checkbox" id="age_young" value="young" (change)="onToggle($event)">
+    <label class="form-check-label" for="age_young">young</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" name="dateOfBirth" type="checkbox" id="age_middle" value="middle" (change)="onToggle($event)">
+    <label class="form-check-label" for="age_middle">middle</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" name="dateOfBirth" type="checkbox" id="age_old" value="old" (change)="onToggle($event)">
+    <label class="form-check-label" for="age_old">old</label>
+  </div>
+</div>
+<div class="col">
+  <div class="form-check">
+    <h6>Gender:</h6>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" name="gender" type="checkbox" id="gender_male" value="male" (change)="onToggle($event)">
+  <label class="form-check-label" for="gender_male">male</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" name="gender" type="checkbox" id="gender_female" value="female" (change)="onToggle($event)">
+  <label class="form-check-label" for="gender_female">female</label>
+</div>
+</div>
+<div class="col">
+  <div class="form-check">
+    <h6>Disabilities:</h6>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" name="isDisabled" type="checkbox" id="disabilities_with" value="true" (change)="onToggle($event)">
+  <label class="form-check-label" for="disabilities_with">with</label>
+</div>
+</div>
+<div class="col">
+  <div class="form-check">
+    <h6>New:</h6>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" name="isNew" type="checkbox" id="new_yes" value="new" (change)="onToggle($event)">
+  <label class="form-check-label" for="new_yes">yes</label>
+</div>                        
+</div>
+</div>
+  <div class="row">
+    <div class="col-lg-4 mb-3" *ngFor="let animal of animals">
+      <img  
+      *ngIf="animal.images.length !== 0" src="data:image/jpeg;base64,{{animal.images[0].imageData}}" class="mx-auto d-block">
+      <img *ngIf="animal.isNew"
+      src="https://www.stickpng.com/assets/images/5a5a6d3714d8c4188e0b0890.png"        
+      class="mx-auto d-block label">
+      
+      <h2>{{ animal.name}}</h2>
+      <p *ngIf="getAge(animal.dateOfBirth) !== 0">Age: {{ getAge(animal.dateOfBirth)}}</p>
+      <p *ngIf="getAge(animal.dateOfBirth) === 0">Months: {{getMonth(animal.dateOfBirth) }}</p>
+      <p>Weight: {{animal.weight}}</p>
+      <p >{{getCategory(animal.categoryId)}}</p>
+      <p *ngIf="animal.gender === 0">Male</p>
+      <p *ngIf="animal.gender === 1">Female</p>
+      <p><a class="btn btn-secondary" [routerLink]="['/animalItem', animal.id]" role="button">View details »</a></p>
+      <button class="btn btn-sm btn-danger" *ngIf="currentUser" (click)="delete(animal)">Delete</button>
+  </div><!-- /.col-lg-4 -->
+  </div>
+</div>

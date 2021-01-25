@@ -1,0 +1,62 @@
+<div class="container">
+<div class="row">
+<div class="col">
+  <h2>Admins</h2>
+  <table class="table">
+    <thead>
+      <tr><th style="width: 5%;">#</th><th>Email</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admin of admins; let i = index">
+        <td style="width: 5%;">{{i + 1}}</td>
+        <td>{{admin.email}}</td>
+        <td>
+          <div class="butt">
+          <button type="button" (click)="AssignToRole(admin)"class="btn btn-primary">Promote</button>
+          </div>
+          <div class=butt>
+          <button type="button" (click)="DeleteAdmin(admin)"class="btn btn-danger">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col">
+  <h2>Super Admins</h2>
+  <table class="table">
+    <thead>
+      <tr><th style="width: 5%;">#</th><th>Email</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let superAdmin of superAdmins; let i = index">
+        <td style="width: 5%;">{{i + 1}}</td>
+        <td>{{superAdmin.email}}</td>
+        <td><button  *ngIf="superAdmin.id!='1'" type="button" (click)="UnassignRole(superAdmin)"class="btn btn-warning">Unassign</button>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+</div>
+<div class="row">
+  <div class="col-6">
+  <h2>Add admin</h2>
+  <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <input type="email" formControlName="email" 
+                            class="form-control" 
+                            placeholder="Email Address"
+                            [ngClass]="{ 'is-invalid': submitted && this.emailForm.controls.email.errors && this.emailForm.controls.email.touched}" />
+        <div *ngIf=" submitted && this.emailForm.controls.email.errors && this.emailForm.controls.email.touched" class="invalid-feedback">
+            <div *ngIf="this.emailForm.controls.email.errors.pattern">Invalid email address.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">
+          &nbsp;Add&nbsp;
+        </button>
+    </div>
+</form>
+</div>
+</div>
+</div>

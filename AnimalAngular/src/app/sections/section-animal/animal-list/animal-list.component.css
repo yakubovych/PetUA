@@ -1,0 +1,27 @@
+.marketing{
+    text-align: center;
+}
+.photo{
+    position: relative;
+}
+.label{
+    position: absolute;
+    height: auto;
+    width: 20%;
+    top: 20px;
+    left: 260px;
+}
+
+.form-check{
+    display: table;
+}
+.form-check-input{
+    margin-left: 2px;
+}
+.filter-label{
+    float: left;
+    height: 100%;
+}
+div label{
+    margin-left: 19px;
+}

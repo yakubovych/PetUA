@@ -1,0 +1,35 @@
+func @_Persistance.Data.ModelConfigurations.UserConfiguration.Configure$Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder$Domain.Models.User$$(none) -> () loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :8 :8) {
+^entry (%_builder : none):
+%0 = cbde.alloca none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :8 :30)
+cbde.store %_builder, %0 : memref<none> loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :8 :30)
+br ^0
+
+^0: // SimpleBlock
+%1 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :10 :12) // Not a variable of known type: builder
+%2 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :11 :16) // new User                  {                      Id = "1",                      Email = "pets.adoption.service@gmail.com",                      NormalizedEmail = "PETS.ADOPTIONS.SERVICE@GMAIL.COM",                      EmailConfirmed = true,                      UserName = "pets.adoption.service@gmail.com",                      NormalizedUserName = "PETS.ADOPTIONS.SERVICE@GMAIL.COM",                      FullName = "Super main admin",                      AddressId = 2,                      PhoneNumber = "0974128341"                  } (ObjectCreationExpression)
+%3 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :13 :25) // "1" (StringLiteralExpression)
+%4 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :14 :28) // "pets.adoption.service@gmail.com" (StringLiteralExpression)
+%5 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :15 :38) // "PETS.ADOPTIONS.SERVICE@GMAIL.COM" (StringLiteralExpression)
+%6 = constant 1 : i1 loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :16 :37) // true
+%7 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :17 :31) // "pets.adoption.service@gmail.com" (StringLiteralExpression)
+%8 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :18 :41) // "PETS.ADOPTIONS.SERVICE@GMAIL.COM" (StringLiteralExpression)
+%9 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :19 :31) // "Super main admin" (StringLiteralExpression)
+%10 = constant 2 : i32 loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :20 :32)
+%11 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :21 :34) // "0974128341" (StringLiteralExpression)
+%12 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :23 :16) // new User                  {                      Id = "2",                      Email = "service@gmail.com",                      NormalizedEmail = "SERVICE@GMAIL.COM",                      EmailConfirmed = true,                      UserName = "service@gmail.com",                      NormalizedUserName = "SERVICE@GMAIL.COM",                      FullName = "just admin",                      AddressId = 3,                      PhoneNumber = "0974128342"                  } (ObjectCreationExpression)
+%13 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :25 :25) // "2" (StringLiteralExpression)
+%14 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :26 :28) // "service@gmail.com" (StringLiteralExpression)
+%15 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :27 :38) // "SERVICE@GMAIL.COM" (StringLiteralExpression)
+%16 = constant 1 : i1 loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :28 :37) // true
+%17 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :29 :31) // "service@gmail.com" (StringLiteralExpression)
+%18 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :30 :41) // "SERVICE@GMAIL.COM" (StringLiteralExpression)
+%19 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :31 :31) // "just admin" (StringLiteralExpression)
+%20 = constant 3 : i32 loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :32 :32)
+%21 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :33 :34) // "0974128342" (StringLiteralExpression)
+%22 = cbde.unknown : none loc("C:\\Users\\Admin\\Desktop\\lv-epmrduapap\\AnimalsProject\\Persistance\\Data\\ModelConfigurations\\UserConfiguration.cs" :10 :12) // builder.HasData(                  new User                  {                      Id = "1",                      Email = "pets.adoption.service@gmail.com",                      NormalizedEmail = "PETS.ADOPTIONS.SERVICE@GMAIL.COM",                      EmailConfirmed = true,                      UserName = "pets.adoption.service@gmail.com",                      NormalizedUserName = "PETS.ADOPTIONS.SERVICE@GMAIL.COM",                      FullName = "Super main admin",                      AddressId = 2,                      PhoneNumber = "0974128341"                  },                  new User                  {                      Id = "2",                      Email = "service@gmail.com",                      NormalizedEmail = "SERVICE@GMAIL.COM",                      EmailConfirmed = true,                      UserName = "service@gmail.com",                      NormalizedUserName = "SERVICE@GMAIL.COM",                      FullName = "just admin",                      AddressId = 3,                      PhoneNumber = "0974128342"                  }) (InvocationExpression)
+br ^1
+
+^1: // ExitBlock
+return
+
+}

@@ -1,0 +1,62 @@
+<div class="container marketing">
+  <div class="row">
+    <div class="col-lg-4">
+      <img
+        src="data:image/jpeg;base64,{{animal.images[0].imageData}}"
+        class="mx-auto d-block photo">
+        <div class="container">
+        <img *ngIf="animal.isNew"
+        src="https://www.stickpng.com/assets/images/5a5a6d3714d8c4188e0b0890.png"        
+        class="mx-auto d-block label"
+        width="10%" height="auto"
+        >
+      </div>
+      <div *ngIf="currentUser" class="d-inline">
+        <button *ngIf="!animal.isAdopted" type="button" class="btn btn-info mr-2 mt-3" (click)="moveToAdopted()">MoveToAdopted</button>
+        <button *ngIf="!animal.isHidden" type="button" class="btn btn-info mr-2 mt-3" (click)="moveToHidden()">MoveToHidden</button>
+        <button *ngIf="animal.isAdopted" type="button" class="btn btn-info mr-2 mt-3" (click)="moveToAdopted()">MoveAdoptedToCatalog</button>
+        <button *ngIf="animal.isHidden" type="button" class="btn btn-info mr-2 mt-3" (click)="moveToHidden()">MoveHiddenToCatalog</button>
+      </div>
+      <h1>Name: {{ animal.name}}</h1>
+      <p *ngIf="getAge(animal.dateOfBirth) !== 0">Age: {{ getAge(animal.dateOfBirth)}}</p>
+      <p *ngIf="getAge(animal.dateOfBirth) === 0">Months: {{getMonth(animal.dateOfBirth) }}</p>      <p>Weight: {{animal.weight}}</p>
+      <p>Withers height: {{ animal.withersHeight}}</p>
+      <p>Neck circumference: {{ animal.neckCircumference}}</p>
+      <p>Chip number: {{ animal.chipNumber}}</p>
+      <p> {{ disabled }}</p>
+      <p *ngIf="animal.isAdopted">Adopted</p>
+      <p *ngIf="animal.isNew">New</p>
+      <p *ngIf="animal.continuatitonOfTreatment">Continuatiton of treatment</p>
+      <p></p>
+        <strong>Gender:</strong>
+        <p *ngIf="animal.gender === 0">male</p>
+        <p *ngIf="animal.gender === 1">female</p>
+      <strong>Keeping: </strong>
+      <p *ngFor="let keeping of animal.keepings">{{keeping.name}}</p>
+      <strong>Needs: </strong>
+      <p *ngFor="let need of animal.needs">{{need.name}}</p>
+      <strong>Defects: </strong>
+      <p *ngFor="let defect of animal.defects">{{defect.type}}</p>
+      <strong>Vaccinations: </strong>
+      <div *ngFor="let vaccine of animal.vaccinations">
+        <p>{{vaccine.name}}</p>
+        <p>Type:{{vaccine.type}}</p>
+        <p>Date: {{vaccine.vaccinationDate | date: 'fullDate'}}</p>
+        <p>Next vaccination: {{vaccine.nextVaccinationDate | date: 'fullDate'}}</p>
+      </div>
+      <strong>Processing: </strong>
+      <div *ngFor="let processing of animal.processings">
+        <p>{{processing.name}}</p>
+        <p>Type:{{processing.type}}</p>
+        <p>Date: {{processing.processingDate}}</p>
+        <p>Next processing: {{processing.nextProcessingDate}}</p>
+      </div>
+      <strong>Attitude: </strong>
+      <div *ngFor="let attitude of animal.attitudes">
+        <p>{{attitude.name}}</p>
+        <p>{{attitude.mark}}</p>
+      </div>
+      <p><a class="btn btn-secondary" [routerLink]="['/animalEdit', animal.id]" role="button">Edit</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div>
+</div>

@@ -1,0 +1,27 @@
+04/27/2020 13:50:03 [Information]  App is starting up
+04/27/2020 13:50:11 [Information]  HTTP "GET" "/swagger" responded 301 in 3.3174 ms
+04/27/2020 13:50:11 [Information]  HTTP "GET" "/swagger/index.html" responded 200 in 64.4213 ms
+04/27/2020 13:50:11 [Information]  HTTP "GET" "/swagger/swagger-ui.css" responded 200 in 75.0614 ms
+04/27/2020 13:50:11 [Information]  HTTP "GET" "/swagger/swagger-ui-standalone-preset.js" responded 200 in 73.4454 ms
+04/27/2020 13:50:11 [Information]  HTTP "GET" "/swagger/swagger-ui-bundle.js" responded 200 in 121.7170 ms
+04/27/2020 13:50:30 [Information]  HTTP "GET" "/api/Animal/Get" responded 200 in 1031.5478 ms
+04/27/2020 13:56:14 [Information]  App is starting up
+04/27/2020 13:56:22 [Warning]  Failed to determine the https port for redirect.
+04/27/2020 13:56:22 [Information]  HTTP "GET" "/swagger" responded 301 in 11.9640 ms
+04/27/2020 13:56:23 [Information]  HTTP "GET" "/swagger/index.html" responded 200 in 61.6104 ms
+04/27/2020 13:56:23 [Information]  HTTP "GET" "/swagger/swagger-ui-bundle.js" responded 200 in 75.1111 ms
+04/27/2020 13:56:23 [Information]  HTTP "GET" "/swagger/swagger-ui.css" responded 200 in 74.5268 ms
+04/27/2020 13:56:23 [Information]  HTTP "GET" "/swagger/swagger-ui-standalone-preset.js" responded 200 in 75.5988 ms
+04/27/2020 13:56:23 [Information]  HTTP "GET" "/swagger/favicon-32x32.png" responded 200 in 0.6431 ms
+04/27/2020 13:56:32 [Information]  HTTP "GET" "/api/Animal/Get" responded 200 in 2131.5840 ms
+04/27/2020 14:00:58 [Information]  App is starting up
+04/27/2020 14:01:08 [Warning]  Failed to determine the https port for redirect.
+04/27/2020 14:01:09 [Information]  HTTP "GET" "/swagger/index.html" responded 200 in 92.3838 ms
+04/27/2020 14:01:41 [Information]  HTTP "GET" "/api/Animal/Get" responded 200 in 1661.5335 ms
+04/27/2020 14:02:01 [Information]  App is starting up
+04/27/2020 14:02:08 [Information]  HTTP "GET" "/swagger" responded 301 in 3.9967 ms
+04/27/2020 14:02:08 [Information]  HTTP "GET" "/swagger/index.html" responded 200 in 116.5469 ms
+04/27/2020 14:02:08 [Information]  HTTP "GET" "/swagger/swagger-ui.css" responded 200 in 46.2977 ms
+04/27/2020 14:02:08 [Information]  HTTP "GET" "/swagger/swagger-ui-standalone-preset.js" responded 200 in 46.3304 ms
+04/27/2020 14:02:08 [Information]  HTTP "GET" "/swagger/swagger-ui-bundle.js" responded 200 in 98.3453 ms
+04/27/2020 14:02:59 [Information]  HTTP "GET" "/api/Animal/Get" responded 200 in 913.8632 ms

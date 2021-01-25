@@ -1,0 +1,5 @@
+<div *ngIf="message" [ngClass]="message.cssClass">
+    <p>{{message.text}}
+        <button class="close" (click)="clear()" aria-label="Close Account Info Modal Box">&times;</button>
+    </p>
+</div>
